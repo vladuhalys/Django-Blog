@@ -1,5 +1,6 @@
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView, UpdateView 
+from django.views.generic.edit import CreateView, UpdateView, DeleteView # новое
+from django.urls import reverse_lazy 
  
 from .models import Post
  
@@ -20,7 +21,13 @@ class BlogCreateView(CreateView):
     fields = ['title', 'author', 'body']
  
  
-class BlogUpdateView(UpdateView): # Новый класс
+class BlogUpdateView(UpdateView):
     model = Post
     template_name = 'post_edit.html'
     fields = ['title', 'body']
+ 
+ 
+class BlogDeleteView(DeleteView): # Создание нового класса
+    model = Post
+    template_name = 'post_delete.html'
+    success_url = reverse_lazy('home')
