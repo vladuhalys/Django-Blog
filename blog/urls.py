@@ -1,6 +1,6 @@
 # blog/urls.py
 from django.urls import path
-from blog.views import BlogDetailView
+from blog.views import BlogDetailView, BlogListView
 
 urlpatterns = [
     path('', BlogListView.as_view(), name='home'),
