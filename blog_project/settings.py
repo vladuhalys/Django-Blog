@@ -132,3 +132,5 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig', # Добавляем наше приложение
 ]
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
