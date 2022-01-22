@@ -6,6 +6,7 @@
   <body>
     <header>
       <h1><a href="{% url 'home' %}">Django blog</a></h1>
+      <link href="{% static 'css/base.css' %}" rel="stylesheet">
     </header>
     <div>
       {% block content %}
